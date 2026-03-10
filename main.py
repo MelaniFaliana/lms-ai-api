@@ -5,7 +5,7 @@ import re
 
 app = FastAPI()
 
-genai.configure(api_key="AIzaSyCw6-acDC-70VEzcO7VzTt3tL2tOeF_x6Y")
+genai.configure(api_key="GEMINI_API_KEY")
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
@@ -39,5 +39,6 @@ def generate_question(materi: str):
     json_text = re.search(r'\{.*\}', text, re.DOTALL).group()
 
     data = json.loads(json_text)
+
 
     return data
